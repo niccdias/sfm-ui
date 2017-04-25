@@ -59,10 +59,12 @@ The following configurations are recommended for the best practices in `official
 3.Use the `ES_JAVA_OPTS` environment variable to set heap size, e.g. to use 2GB use ``ES_JAVA_OPTS="-Xms2g -Xmx2g"``. It is also recommended to set a memory limit for the container. For best practices, assign enough memory (e.g. 6GB) for elasticsearch,
 
 4.To enable `X-Pack <https://www.elastic.co/guide/en/x-pack/5.3/index.html>`_ monitoring, you also need to set the corresponding value ``XPACK_MONITORING_ENABLED`` to `true` at the kibana container.
-The default value is `false` since it involves license management and update even though the monitoring feature is free for the `basic license <https://www.elastic.co/subscriptions>`_.
+The default value is `false` since it involves license management even though the monitoring feature is free for the `basic license <https://www.elastic.co/subscriptions>`_. The basic license will expire in one month.
+To update your license, please follow the `official guide <https://www.elastic.co/guide/en/x-pack/5.0/installing-license.html>`_.
 
 5.Configuring a correct wait seconds for checking the application dependencies. For the first time, the elasticsearch usually start in a short time, you can set to 90 seconds.
-For restarting with large amount data or enable the monitoring feature, the elasticsearch and kibana will take a little longer to completely start. In this situation, you can set to 120 or 180 seconds.
+For restarting with large amount data or enable the monitoring feature, the kibana will take a little longer to completely start. It could be 300 seconds or even more.
+In this situation, you can set to 120 or 180 seconds. The initial script will loop 10 times to check whether the elasticsearch and kibana status.
 
 
 Kibana
