@@ -71,13 +71,11 @@ Kibana
 +-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 | setting         | desc                                                           | effect                                                                                                                                    |
 +-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| logging.silent  | bool                                                           | no output, don't even setup the logging output                                                                                            |
+| logging.silent  | bool                                                           | Set the value of this setting to true to suppress all logging output.                                                                                         |
 +-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| logging.quiet   | bool                                                           | Only log messages tagged with error or fataltags, or errors caught by hapi                                                                |
+| logging.quiet   | bool                                                           | Set the value of this setting to true to suppress all logging output other than error messages.                                                           |
 +-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| logging.verbose | bool                                                           | Log all the things, including information about system usage and every request                                                            |
-+-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
-| logging.events  | map of log types to the tags they should output. Supports *tag | provides access to every possible combination of logging output filtering. Also can add support for custom loggers setup by plugins, etc. |
+| logging.verbose | bool                                                           | Set the value of this setting to true to log all events, including system usage information and all requests.                                                            |
 +-----------------+----------------------------------------------------------------+-------------------------------------------------------------------------------------------------------------------------------------------+
 
 * In large dataset, you might encounter an error with a query with a large time interval, e.g. 3 years or 5 years. By
